@@ -24,5 +24,9 @@ example of webstorm:
 
 use this configuration, code will stop in your breakpoint within webstorm
 
+### Npm
+
+* [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init)
+
 ### Problem
 [ ] Vue3 demo project run failed ?
