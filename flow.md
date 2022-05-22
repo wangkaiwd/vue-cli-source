@@ -23,3 +23,6 @@ example of webstorm:
 ![](https://cdn.jsdelivr.net/gh/wangkaiwd/drawing-bed/202205221719093.png)
 
 use this configuration, code will stop in your breakpoint within webstorm
+
+### Problem
+[ ] Vue3 demo project run failed ?
