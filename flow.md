@@ -28,5 +28,11 @@ use this configuration, code will stop in your breakpoint within webstorm
 
 * [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init)
 
+### Packages
+* commander
+* minimist
+* lodash
+* debug
+
 ### Problem
-[ ] Vue3 demo project run failed ?
+[x] Vue3 demo project run failed ?

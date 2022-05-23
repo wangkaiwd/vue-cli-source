@@ -14,7 +14,10 @@ const { formatFeatures } = require('./util/features')
 const loadLocalPreset = require('./util/loadLocalPreset')
 const loadRemotePreset = require('./util/loadRemotePreset')
 const generateReadme = require('./util/generateReadme')
-const { resolvePkg, isOfficialPlugin } = require('@vue/cli-shared-utils')
+const {
+  resolvePkg,
+  isOfficialPlugin
+} = require('@vue/cli-shared-utils')
 
 const {
   defaults,
@@ -51,7 +54,10 @@ module.exports = class Creator extends EventEmitter {
 
     this.name = name
     this.context = process.env.VUE_CLI_CONTEXT = context
-    const { presetPrompt, featurePrompt } = this.resolveIntroPrompts()
+    const {
+      presetPrompt,
+      featurePrompt
+    } = this.resolveIntroPrompts()
 
     this.presetPrompt = presetPrompt
     this.featurePrompt = featurePrompt
@@ -62,14 +68,19 @@ module.exports = class Creator extends EventEmitter {
     this.afterAnyInvokeCbs = []
 
     this.run = this.run.bind(this)
-
     const promptAPI = new PromptModuleAPI(this)
     promptModules.forEach(m => m(promptAPI))
   }
 
   async create (cliOptions = {}, preset = null) {
     const isTestOrDebug = process.env.VUE_CLI_TEST || process.env.VUE_CLI_DEBUG
-    const { run, name, context, afterInvokeCbs, afterAnyInvokeCbs } = this
+    const {
+      run,
+      name,
+      context,
+      afterInvokeCbs,
+      afterAnyInvokeCbs
+    } = this
 
     if (!preset) {
       if (cliOptions.preset) {
@@ -124,7 +135,10 @@ module.exports = class Creator extends EventEmitter {
     )
 
     await clearConsole()
-    const pm = new PackageManager({ context, forcePackageManager: packageManager })
+    const pm = new PackageManager({
+      context,
+      forcePackageManager: packageManager
+    })
 
     log(`✨  Creating project in ${chalk.yellow(context)}.`)
     this.emit('creation', { event: 'creating' })
@@ -387,7 +401,11 @@ module.exports = class Creator extends EventEmitter {
         }
       }
 
-      plugins.push({ id, apply, options })
+      plugins.push({
+        id,
+        apply,
+        options
+      })
     }
     return plugins
   }
