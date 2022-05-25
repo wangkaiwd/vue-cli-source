@@ -3,7 +3,7 @@
 * Why we can execute `vue` command globally
   * `vue` in [environment variables](https://ss64.com/osx/syntax-env_vars.html)
 
-### Debug
+### Debug Code
 
 * [chrome](https://nodejs.org/en/docs/guides/debugging-getting-started/#chrome-devtools-55-microsoft-edge)
 * [webstorm](https://nodejs.org/en/docs/guides/debugging-getting-started/#jetbrains-webstorm-and-other-jetbrains-ides)
@@ -24,6 +24,14 @@ example of webstorm:
 
 use this configuration, code will stop in your breakpoint within webstorm
 
+### Debug Test
+
+* WebStorm: debug npm script with arguments
+* node debug
+```shell
+node --inspect-brk --experimental-vm-modules scripts/test.js creator
+```
+
 ### Npm
 
 * [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init)
@@ -33,6 +41,11 @@ use this configuration, code will stop in your breakpoint within webstorm
 * minimist
 * lodash
 * debug
+* chalk
+* inquirer
 
 ### Problem
 [x] Vue3 demo project run failed ?
+
+
+### Prompt Logic
