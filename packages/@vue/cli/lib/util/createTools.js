@@ -9,6 +9,7 @@ exports.getPromptModules = () => {
     'cssPreprocessors',
     'linter',
     'unit',
-    'e2e'
+    'e2e',
+    'componentLibrary'
   ].map(file => require(`../promptModules/${file}`))
 }

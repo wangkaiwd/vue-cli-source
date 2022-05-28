@@ -5,7 +5,8 @@ module.exports = cli => {
     short: 'Unit',
     description: 'Add a Unit Testing solution like Jest or Mocha',
     link: 'https://cli.vuejs.org/config/#unit-testing',
-    plugins: ['unit-jest', 'unit-mocha']
+    plugins: ['unit-jest', 'unit-mocha'],
+    checked: true
   })
 
   cli.injectPrompt({

@@ -3,7 +3,8 @@ module.exports = cli => {
     name: 'CSS Pre-processors',
     value: 'css-preprocessor',
     description: 'Add support for CSS pre-processors like Sass, Less or Stylus',
-    link: 'https://cli.vuejs.org/guide/css.html'
+    link: 'https://cli.vuejs.org/guide/css.html',
+    checked: true
   })
 
   const notice = 'PostCSS, Autoprefixer and CSS Modules are supported by default'
@@ -16,12 +17,12 @@ module.exports = cli => {
     description: `${notice}.`,
     choices: [
       {
-        name: 'Sass/SCSS (with dart-sass)',
-        value: 'dart-sass'
-      },
-      {
         name: 'Less',
         value: 'less'
+      },
+      {
+        name: 'Sass/SCSS (with dart-sass)',
+        value: 'dart-sass'
       },
       {
         name: 'Stylus',

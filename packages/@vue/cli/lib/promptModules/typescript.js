@@ -5,7 +5,8 @@ module.exports = cli => {
     short: 'TS',
     description: 'Add support for the TypeScript language',
     link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript',
-    plugins: ['typescript']
+    plugins: ['typescript'],
+    checked: true
   })
 
   cli.injectPrompt({

@@ -43,6 +43,8 @@ node --inspect-brk --experimental-vm-modules scripts/test.js creator
 * debug
 * chalk
 * inquirer
+* ejs
+* how to handle ast ?
 
 ### Problem
 [x] Vue3 demo project run failed ?
