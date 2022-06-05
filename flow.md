@@ -44,10 +44,24 @@ node --inspect-brk --experimental-vm-modules scripts/test.js creator
 * chalk
 * inquirer
 * ejs
-* how to handle ast ?
+
+### Flow
+
+registry command in `bin/vue.js`
+
+#### Create
+
+Only deep dive `vue-router`
+
+1. select feature
+2. according feature continue config project
+3. generate project
+
+### Dynamic load `vue-router`
+* cli-plugin-router
 
 ### Problem
-[x] Vue3 demo project run failed ?
+- [x] Vue3 demo project run failed ?
+- [x] how to handle ast ?
 
 
-### Prompt Logic
