@@ -2,6 +2,7 @@
 
 * Why we can execute `vue` command globally
   * `vue` in [environment variables](https://ss64.com/osx/syntax-env_vars.html)
+* [associating a scope with a registry](https://docs.npmjs.com/cli/v8/using-npm/scope#associating-a-scope-with-a-registry)
 
 ### Debug Code
 
@@ -32,7 +33,13 @@ use this configuration, code will stop in your breakpoint within webstorm
 node --inspect-brk --experimental-vm-modules scripts/test.js creator
 ```
 
-### Npm
+### Develop
+
+### Build
+
+### Publish
+
+### Npm Packages
 
 * [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init)
 
@@ -48,6 +55,7 @@ node --inspect-brk --experimental-vm-modules scripts/test.js creator
 ### Flow
 
 registry command in `bin/vue.js`
+
 
 #### Create
 
