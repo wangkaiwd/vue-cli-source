@@ -32,11 +32,6 @@ use this configuration, code will stop in your breakpoint within webstorm
 ```shell
 node --inspect-brk --experimental-vm-modules scripts/test.js creator
 ```
-
-### Develop
-
-### Build
-
 ### Publish
 
 ### Npm Packages
@@ -54,7 +49,9 @@ node --inspect-brk --experimental-vm-modules scripts/test.js creator
 
 ### Flow
 
-registry command in `bin/vue.js`
+* registry command in `bin/vue.js`
+* select feature
+  * modify project config by cli plugin  
 
 
 #### Create
@@ -66,6 +63,8 @@ Only deep dive `vue-router`
 3. generate project
 
 ### Dynamic load `vue-router`
+> [Plugin Development Guide](https://cli.vuejs.org/dev-guide/plugin-dev.html#plugin-development-guide)
+
 * cli-plugin-router
 
 ### Problem

@@ -1,3 +1,4 @@
+// https://cli.vuejs.org/dev-guide/plugin-dev.html#generator
 module.exports = (api, options = {}, rootOptions = {}) => {
   const isVue3 = (rootOptions.vueVersion === '3')
 

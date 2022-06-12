@@ -177,6 +177,7 @@ module.exports = class Generator {
     for (const plugin of this.plugins) {
       const { id, apply, options } = plugin
       const api = new GeneratorAPI(id, this, options, rootOptions)
+      // todo: this line invoke vue cli plugin
       await apply(api, options, rootOptions, invoking)
 
       if (apply.hooks) {

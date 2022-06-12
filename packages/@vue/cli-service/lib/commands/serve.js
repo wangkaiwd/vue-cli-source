@@ -60,7 +60,7 @@ module.exports = (api, options) => {
         // https://github.com/vuejs/vue-cli/issues/3539
         webpackConfig
           .output
-            .globalObject(`(typeof self !== 'undefined' ? self : this)`)
+          .globalObject(`(typeof self !== 'undefined' ? self : this)`)
 
         if (!process.env.VUE_CLI_TEST && options.devServer.progress !== false) {
           // the default progress plugin won't show progress due to infrastructreLogging.level
@@ -169,7 +169,10 @@ module.exports = (api, options) => {
 
     // fixme: temporary fix to suppress dev server logging
     // should be more robust to show necessary info but not duplicate errors
-    webpackConfig.infrastructureLogging = { ...webpackConfig.infrastructureLogging, level: 'none' }
+    webpackConfig.infrastructureLogging = {
+      ...webpackConfig.infrastructureLogging,
+      level: 'none'
+    }
     webpackConfig.stats = 'errors-only'
 
     // create compiler
@@ -212,7 +215,10 @@ module.exports = (api, options) => {
         logging: 'none',
         overlay: isProduction // TODO disable this
           ? false
-          : { warnings: false, errors: true },
+          : {
+            warnings: false,
+            errors: true
+          },
         progress: !process.env.VUE_CLI_TEST,
 
         ...projectDevServerOptions.client
@@ -372,7 +378,10 @@ function genHistoryApiFallbackRewrites (baseUrl, pages = {}) {
     }))
   return [
     ...multiPageRewrites,
-    { from: /./, to: path.posix.join(baseUrl, 'index.html') }
+    {
+      from: /./,
+      to: path.posix.join(baseUrl, 'index.html')
+    }
   ]
 }
 

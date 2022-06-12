@@ -33,6 +33,7 @@ Note: eslint-config-* packages should be released separately & manually.
 
 process.env.VUE_CLI_RELEASE = true
 
+// eslint-disable-next-line node/no-extraneous-require
 const execa = require('execa')
 const semver = require('semver')
 const inquirer = require('inquirer')
@@ -45,7 +46,6 @@ const curVersion = require('../lerna.json').version
 
 const release = async () => {
   console.log(`Current version: ${curVersion}`)
-
   const bumps = ['patch', 'minor', 'major', 'prerelease']
   const versions = {}
   bumps.forEach(b => { versions[b] = semver.inc(curVersion, b) })
