@@ -39,6 +39,7 @@ node --inspect-brk --experimental-vm-modules scripts/test.js creator
 * [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init)
 
 ### Packages
+
 * commander
 * minimist
 * lodash
@@ -46,6 +47,7 @@ node --inspect-brk --experimental-vm-modules scripts/test.js creator
 * chalk
 * inquirer
 * ejs
+* [leven](https://github.com/sindresorhus/leven)
 
 ### Flow
 
