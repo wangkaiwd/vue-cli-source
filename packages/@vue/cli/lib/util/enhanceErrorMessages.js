@@ -1,7 +1,12 @@
 const program = require('commander')
-const { chalk } = require('@vue/cli-shared-utils')
+// eslint-disable-next-line node/no-extraneous-require
+const chalk = require('chalk')
 
 module.exports = (methodName, log) => {
+  // rewrite commander prototype method to get more friendly error message
+  // missingArguments
+  // unknownOption
+  // optionMissingArgument
   program.Command.prototype[methodName] = function (...args) {
     if (methodName === 'unknownOption' && this._allowUnknownOption) {
       return
