@@ -31,4 +31,5 @@ if (!args['e2e-only']) {
 
 console.log(`running jest with args: ${jestArgs.join(' ')}`)
 
+// running jest with args: --env node --runInBand Generator.spec.js --testPathIgnorePatterns Migrator|Vue3|mochaPlugin|MochaPlugin|eslint8
 require('jest').run(jestArgs)

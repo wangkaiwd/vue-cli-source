@@ -1,3 +1,4 @@
+// https://jestjs.io/docs/manual-mocks#mocking-node-modules
 const { fs } = require('memfs')
 
 // overwrite config path and context when fs is mocked

@@ -4,11 +4,18 @@ const inquirer = require('inquirer')
 const Creator = require('./Creator')
 const { clearConsole } = require('./util/clearConsole')
 const { getPromptModules } = require('./util/createTools')
-const { chalk, error, stopSpinner, exit } = require('@vue/cli-shared-utils')
+const {
+  chalk,
+  error,
+  stopSpinner,
+  exit
+} = require('@vue/cli-shared-utils')
 const validateProjectName = require('validate-npm-package-name')
 
 async function create (projectName, options) {
   if (options.proxy) {
+    // https://nodejs.org/api/process.html#processenv
+    // It is possible to modify this object, but such modifications will not be reflected outside the Node.js process, or to other Worker threads.
     process.env.HTTP_PROXY = options.proxy
   }
 
@@ -52,9 +59,18 @@ async function create (projectName, options) {
             type: 'list',
             message: `Target directory ${chalk.cyan(targetDir)} already exists. Pick an action:`,
             choices: [
-              { name: 'Overwrite', value: 'overwrite' },
-              { name: 'Merge', value: 'merge' },
-              { name: 'Cancel', value: false }
+              {
+                name: 'Overwrite',
+                value: 'overwrite'
+              },
+              {
+                name: 'Merge',
+                value: 'merge'
+              },
+              {
+                name: 'Cancel',
+                value: false
+              }
             ]
           }
         ])

@@ -13,7 +13,7 @@
 example of chrome:
 
 ```shell
-node --inspect-brk /Users/wangkai/.yarn/bin/vue create test-debug
+node --inspect-brk $HOME/.yarn/bin/vue create test-debug
 ```
 ![](https://cdn.jsdelivr.net/gh/wangkaiwd/drawing-bed/202205221656656.png)
 
@@ -33,6 +33,8 @@ use this configuration, code will stop in your breakpoint within webstorm
 node --inspect-brk --experimental-vm-modules scripts/test.js creator
 ```
 ### Publish
+
+* internal invoke `lerna publish`
 
 ### Npm Packages
 
