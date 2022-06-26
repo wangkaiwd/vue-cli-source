@@ -64,6 +64,11 @@ Only deep dive `vue-router`
 2. according feature continue config project
 3. generate project
 
+Execute flow:
+
+![](https://cdn.jsdelivr.net/gh/wangkaiwd/drawing-bed/202206270151619.png)
+
+
 ### Dynamic load `vue-router`
 > [Plugin Development Guide](https://cli.vuejs.org/dev-guide/plugin-dev.html#plugin-development-guide)
 
