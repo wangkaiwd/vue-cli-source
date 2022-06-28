@@ -68,11 +68,14 @@ module.exports = class Creator extends EventEmitter {
     this.afterAnyInvokeCbs = []
 
     this.run = this.run.bind(this)
+    // composition
     const promptAPI = new PromptModuleAPI(this)
     promptModules.forEach(m => m(promptAPI))
   }
 
+  // core
   async create (cliOptions = {}, preset = null) {
+    // put test directory to enable debug mode
     const isTestOrDebug = process.env.VUE_CLI_TEST || process.env.VUE_CLI_DEBUG
     const {
       run,
@@ -195,6 +198,7 @@ module.exports = class Creator extends EventEmitter {
     if (shouldInitGit) {
       log(`🗃  Initializing git repository...`)
       this.emit('creation', { event: 'git-init' })
+      // execa
       await run('git init')
     }
 

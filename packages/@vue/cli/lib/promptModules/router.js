@@ -1,5 +1,6 @@
 const { chalk } = require('@vue/cli-shared-utils')
 
+// cli: PromptModuleAPI instance
 module.exports = cli => {
   cli.injectFeature({
     name: 'Router',

@@ -28,7 +28,7 @@ use this configuration, code will stop in your breakpoint within webstorm
 ### Debug Test
 
 * WebStorm: debug npm script with arguments
-* node debug
+* node debug: script arguments is your test filename
 ```shell
 node --inspect-brk --experimental-vm-modules scripts/test.js creator
 ```
@@ -66,7 +66,9 @@ Only deep dive `vue-router`
 
 Execute flow:
 
-![](https://cdn.jsdelivr.net/gh/wangkaiwd/drawing-bed/202206270151619.png)
+#### Preset
+
+#### Plugin
 
 
 ### Dynamic load `vue-router`
@@ -75,7 +77,7 @@ Execute flow:
 * cli-plugin-router
 
 ### Problem
-- [x] Vue3 demo project run failed ?
-- [x] how to handle ast ?
+- [ ] Vue3 demo project run failed ?
+- [ ] how to handle ast ?
 
 
