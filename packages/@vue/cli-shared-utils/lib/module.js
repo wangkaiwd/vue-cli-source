@@ -76,6 +76,7 @@ exports.loadModule = function (request, context, force = false) {
   }
 
   try {
+    // why need create require?
     return createRequire(path.resolve(context, 'package.json'))(request)
   } catch (e) {
     const resolvedPath = exports.resolveModule(request, context)
