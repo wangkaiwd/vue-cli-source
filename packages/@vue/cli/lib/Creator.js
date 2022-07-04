@@ -209,6 +209,7 @@ module.exports = class Creator extends EventEmitter {
 
     if (isTestOrDebug && !process.env.VUE_CLI_TEST_DO_INSTALL_PLUGIN) {
       // in development, avoid installation process
+      // create symlink
       await require('./util/setupDevProject')(context)
     } else {
       await pm.install()
@@ -283,6 +284,7 @@ module.exports = class Creator extends EventEmitter {
       )
     }
     log()
+    // use in vue-ui
     this.emit('creation', { event: 'done' })
 
     if (gitCommitFailed) {
