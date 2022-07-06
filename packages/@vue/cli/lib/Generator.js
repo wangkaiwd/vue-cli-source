@@ -137,6 +137,7 @@ module.exports = class Generator {
     this.exitLogs = []
 
     // load all the other plugins
+    // apply: generator function
     this.allPlugins = this.resolveAllPlugins()
 
     const cliService = plugins.find(p => p.id === '@vue/cli-service')
@@ -148,7 +149,10 @@ module.exports = class Generator {
   }
 
   async initPlugins () {
-    const { rootOptions, invoking } = this
+    const {
+      rootOptions,
+      invoking
+    } = this
     const pluginIds = this.plugins.map(p => p.id)
 
     // avoid modifying the passed afterInvokes, because we want to ignore them from other plugins
@@ -156,7 +160,10 @@ module.exports = class Generator {
     this.afterInvokeCbs = []
     // apply hooks from all plugins to collect 'afterAnyHooks'
     for (const plugin of this.allPlugins) {
-      const { id, apply } = plugin
+      const {
+        id,
+        apply
+      } = plugin
       const api = new GeneratorAPI(id, this, {}, rootOptions)
 
       if (apply.hooks) {
@@ -175,7 +182,11 @@ module.exports = class Generator {
 
     // apply generators from plugins
     for (const plugin of this.plugins) {
-      const { id, apply, options } = plugin
+      const {
+        id,
+        apply,
+        options
+      } = plugin
       const api = new GeneratorAPI(id, this, options, rootOptions)
       // todo: this line invoke vue cli plugin
       await apply(api, options, rootOptions, invoking)
@@ -231,7 +242,10 @@ module.exports = class Generator {
           this.files,
           this.context
         )
-        const { content, filename } = res
+        const {
+          content,
+          filename
+        } = res
         this.files[filename] = ensureEOL(content)
         delete this.pkg[key]
       }
@@ -298,9 +312,15 @@ module.exports = class Generator {
       .concat(Object.keys(this.pkg.devDependencies || {}))
       .forEach(id => {
         if (!isPlugin(id)) return
+        // loaddModule: require
         const pluginGenerator = loadModule(`${id}/generator`, this.context)
         if (!pluginGenerator) return
-        allPlugins.push({ id, apply: pluginGenerator })
+        // apply is plugin generator function
+        // api,options,rootOptions
+        allPlugins.push({
+          id,
+          apply: pluginGenerator
+        })
       })
     return sortPlugins(allPlugins)
   }
@@ -321,7 +341,10 @@ module.exports = class Generator {
       imports = imports instanceof Set ? Array.from(imports) : imports
       if (imports && imports.length > 0) {
         files[file] = runTransformation(
-          { path: file, source: files[file] },
+          {
+            path: file,
+            source: files[file]
+          },
           require('./util/codemods/injectImports'),
           { imports }
         )
@@ -331,7 +354,10 @@ module.exports = class Generator {
       injections = injections instanceof Set ? Array.from(injections) : injections
       if (injections && injections.length > 0) {
         files[file] = runTransformation(
-          { path: file, source: files[file] },
+          {
+            path: file,
+            source: files[file]
+          },
           require('./util/codemods/injectOptions'),
           { injections }
         )
@@ -366,7 +392,11 @@ module.exports = class Generator {
 
   printExitLogs () {
     if (this.exitLogs.length) {
-      this.exitLogs.forEach(({ id, msg, type }) => {
+      this.exitLogs.forEach(({
+        id,
+        msg,
+        type
+      }) => {
         const shortId = toShortPluginId(id)
         const logFn = logTypes[type]
         if (!logFn) {

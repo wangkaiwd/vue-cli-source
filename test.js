@@ -1,1 +1,5 @@
-console.log(require.resolve('lerna/cli'))
+const a = 1
+const b = 2
+
+const c = a + b
+console.log('c', c)

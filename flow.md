@@ -64,17 +64,32 @@ Only deep dive `vue-router`
 2. according feature continue config project
 3. generate project
 
-Execute flow:
+Base template:
+
+* vue3
+
+Feature:
+
+* Component library
+* Router
 
 #### Preset
 
 #### Plugin
 
+Naming and discoverability:
+* name convention: `vue-cli-plugin-<name>`, `@scope/vue-cli-plugin-name`
+
+Generator:
+* During a project's initial creation, if the CLI plugin is installed as part of the project creation preset
+* When the plugin is installed after project's creation and invoked individually via `vue add` or `vue invoke`
 
 ### Dynamic load `vue-router`
 > [Plugin Development Guide](https://cli.vuejs.org/dev-guide/plugin-dev.html#plugin-development-guide)
 
 * cli-plugin-router
+
+Thinking: 
 
 ### Problem
 - [ ] Vue3 demo project run failed ?
