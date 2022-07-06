@@ -207,13 +207,13 @@ module.exports = class Creator extends EventEmitter {
     log()
     this.emit('creation', { event: 'plugins-install' })
 
-    if (isTestOrDebug && !process.env.VUE_CLI_TEST_DO_INSTALL_PLUGIN) {
-      // in development, avoid installation process
-      // create symlink
-      await require('./util/setupDevProject')(context)
-    } else {
-      await pm.install()
-    }
+    // if (isTestOrDebug && !process.env.VUE_CLI_TEST_DO_INSTALL_PLUGIN) {
+    //   // in development, avoid installation process
+    //   // create symlink
+    //   await require('./util/setupDevProject')(context)
+    // } else {
+    await pm.install()
+    // }
 
     // run generator
     log(`🚀  Invoking generators...`)
