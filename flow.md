@@ -1,8 +1,20 @@
 ## Record
-
+Global Usage:
 * Why we can execute `vue` command globally
-  * `vue` in [environment variables](https://ss64.com/osx/syntax-env_vars.html)
+  * `vue` in [environment variables](https://ss64.com/osx/syntax-env_vars.html) 
+  * `where vue` to get `vue` command location
+  * vue is a symbolic link, it's real location in `/somepath/node_modules/.bin/vue.js`
+  * symbolic link location list in `PATH`
+  * environment variable `PATH`: A colon-separated list of directories in which the shell looks for commands
+* Why `/.bin/vue.js` can execute directly ?
+  * add [`#!/usr/bin/env node`](https://stackoverflow.com/a/33510581/12819402) in first line of code
+  * [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
+* package [`bin`](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#bin) field
 * [associating a scope with a registry](https://docs.npmjs.com/cli/v8/using-npm/scope#associating-a-scope-with-a-registry)
+
+Use as a package scope dependency
+* binary executable name in `npm scripts` 
+* in addition to the shell's pre-existing `PATH`, `npm run` adds `node_modules/.bin` to the `PATH` provided to scripts
 
 ### Debug Code
 
