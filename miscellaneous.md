@@ -36,6 +36,7 @@ vue-cli:
   * [how to generate base template with `cli-service`](https://github.com/vuejs/vue-cli/blob/4a0655f7ac09b64d2b47506e7f21e7923d43262b/packages/%40vue/cli-service/generator/index.js#L2-L5)
   * plugin mechanism
   * vue-codemod: ast to ast
+* How to handle [treeing shaking](https://webpack.js.org/guides/tree-shaking/)?
 
 notes:
 
