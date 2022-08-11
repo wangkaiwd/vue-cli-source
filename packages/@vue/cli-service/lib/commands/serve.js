@@ -185,7 +185,7 @@ module.exports = (api, options) => {
     })
 
     // create server
-    const server = new WebpackDevServer(Object.assign({
+    const x = Object.assign({
       historyApiFallback: {
         disableDotRule: true,
         htmlAcceptHeaders: [
@@ -245,7 +245,8 @@ module.exports = (api, options) => {
 
         return middlewares
       }
-    }), compiler)
+    })
+    const server = new WebpackDevServer(x, compiler)
 
     if (args.stdin) {
       process.stdin.on('end', () => {

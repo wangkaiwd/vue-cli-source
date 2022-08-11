@@ -1,0 +1,7 @@
+{
+  "name": "@vue/vue-cli-plugin-library",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "vue-cli plugin to add popular component library",
+  "license": "MIT"
+}

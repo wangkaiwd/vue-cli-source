@@ -35,7 +35,7 @@ vue-cli:
 * How to create project template
   * [how to generate base template with `cli-service`](https://github.com/vuejs/vue-cli/blob/4a0655f7ac09b64d2b47506e7f21e7923d43262b/packages/%40vue/cli-service/generator/index.js#L2-L5)
   * plugin mechanism
-  * vue-codemod: ast to ast
+  * vue-codemod: ast to ast 
 * How to handle [treeing shaking](https://webpack.js.org/guides/tree-shaking/)?
 
 notes:
@@ -46,3 +46,7 @@ symlink(symbolic link or soft link) which include another symlink:
 
 * vue -> yarn/link/@vue/cli/bin/vue.js
 * cli -> vue-cli
+
+## Nodejs
+
+* [FS constants](https://nodejs.org/api/fs.html#fs-constants)

@@ -84,6 +84,7 @@ class PluginAPI {
       fn = opts
       opts = null
     }
+    // put it in commands
     this.service.commands[name] = { fn, opts: opts || {} }
   }
 
