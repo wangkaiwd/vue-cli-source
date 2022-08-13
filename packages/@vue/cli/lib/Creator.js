@@ -101,6 +101,7 @@ module.exports = class Creator extends EventEmitter {
           exit(1)
         }
       } else {
+        // add plugins
         preset = await this.promptAndResolvePreset()
       }
     }

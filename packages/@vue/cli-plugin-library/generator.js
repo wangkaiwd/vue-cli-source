@@ -5,7 +5,19 @@ module.exports = (api, options, preset) => {
   // https://github.com/facebook/jscodeshift#transform-module
   // recast + jscodeshift api
   api.transformScript(entryFile, (fileInfo, jApi) => {
-    console.log('fileInfo', fileInfo, jApi)
-    return fileInfo.source
+    const j = jApi.jscodeshift
+    const root = j(fileInfo.source)
+    const appRoots = root.find(j.Identifier, (node) => {
+      if (node.name === 'app') {
+        return true
+      }
+    })
+    appRoots.replaceWith(({ node }) => {
+      return j.CallExpression(
+        j.memberExpression(node), j.Identifier('use'),
+        [j.Identifier('Antd')]
+      )
+    })
+    return appRoots.toSource()
   })
 }

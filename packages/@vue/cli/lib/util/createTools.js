@@ -10,6 +10,6 @@ exports.getPromptModules = () => {
     'linter',
     'unit',
     'e2e',
-    'componentLibrary'
+    'library'
   ].map(file => require(`../promptModules/${file}`))
 }
