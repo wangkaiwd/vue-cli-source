@@ -31,7 +31,7 @@ function pruneObject (obj) {
 
   return obj
 }
-
+// create template with generator
 class GeneratorAPI {
   /**
    * @param {string} id - Id of the owner plugin

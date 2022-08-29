@@ -386,6 +386,7 @@ module.exports = class Creator extends EventEmitter {
     rawPlugins = sortObject(rawPlugins, ['@vue/cli-service'], true)
     const plugins = []
     for (const id of Object.keys(rawPlugins)) {
+      // todo: this line not work ?
       const apply = loadModule(`${id}/generator`, this.context) || (() => {})
       let options = rawPlugins[id] || {}
 

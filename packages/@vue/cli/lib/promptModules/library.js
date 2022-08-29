@@ -8,7 +8,7 @@ module.exports = cli => {
   })
 
   cli.onPromptComplete((answers, options) => {
-    if (answers.features.includes('router')) {
+    if (answers.features.includes('library')) {
       options.plugins['@vue/cli-plugin-library'] = {}
     }
   })
