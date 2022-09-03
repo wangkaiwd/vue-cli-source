@@ -312,7 +312,7 @@ module.exports = class Generator {
       .concat(Object.keys(this.pkg.devDependencies || {}))
       .forEach(id => {
         if (!isPlugin(id)) return
-        // loaddModule: require
+        // loadModule: require
         const pluginGenerator = loadModule(`${id}/generator`, this.context)
         if (!pluginGenerator) return
         // apply is plugin generator function

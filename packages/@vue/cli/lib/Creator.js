@@ -220,6 +220,7 @@ module.exports = class Creator extends EventEmitter {
     log(`🚀  Invoking generators...`)
     this.emit('creation', { event: 'invoking-generators' })
     const plugins = await this.resolvePlugins(preset.plugins, pkg)
+    // context: user project root directory
     const generator = new Generator(context, {
       pkg,
       plugins,
@@ -386,7 +387,6 @@ module.exports = class Creator extends EventEmitter {
     rawPlugins = sortObject(rawPlugins, ['@vue/cli-service'], true)
     const plugins = []
     for (const id of Object.keys(rawPlugins)) {
-      // todo: this line not work ?
       const apply = loadModule(`${id}/generator`, this.context) || (() => {})
       let options = rawPlugins[id] || {}
 

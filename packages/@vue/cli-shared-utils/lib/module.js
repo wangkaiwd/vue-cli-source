@@ -68,6 +68,7 @@ exports.resolveModule = function (request, context) {
   return resolvedPath
 }
 
+// create require which search module in user project root directory
 exports.loadModule = function (request, context, force = false) {
   // createRequire doesn't work with jest mocked fs
   // (which we used in tests for cli-service)

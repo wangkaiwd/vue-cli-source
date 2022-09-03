@@ -64,28 +64,20 @@ node --inspect-brk --experimental-vm-modules scripts/test.js creator
 ### Flow
 
 * registry command in `bin/vue.js`
-* select feature
-  * modify project config by cli plugin  
+* user execute create command
+* select features
+* add plugins by features
+* generate package.json
+* install dependencies from package.json
+* generate template by `vue-cli` plugin which under project `node_modules`
 
-
-#### Create
-
-Only deep dive `vue-router`
-
-1. select feature
-2. according feature continue config project
-3. generate project
-
-Base template:
-
-* vue3
-
-Feature:
-
-* Component library
-* Router
-
-#### Preset
+Core is Plugin:
+* Generator
+  * generate template
+* Service Plugin
+  * change webpack config
+* Prompts
+  * handle user choices
 
 #### Plugin
 
@@ -105,6 +97,6 @@ Thinking:
 
 ### Problem
 - [ ] Vue3 demo project run failed ?
-- [ ] how to handle ast ?
+- [ ] how to handle ast: jsCodeShift
 
 
