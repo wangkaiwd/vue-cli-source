@@ -69,15 +69,12 @@ node --inspect-brk --experimental-vm-modules scripts/test.js creator
 * add plugins by features
 * generate package.json
 * install dependencies from package.json
-* generate template by `vue-cli` plugin which under project `node_modules`
+* invoke `vue-cli-plugin` when execute `cli-service` command:
+  * generator: create template
+  * service plugin: modify webpack config
+  * prompt
 
-Core is Plugin:
-* Generator
-  * generate template
-* Service Plugin
-  * change webpack config
-* Prompts
-  * handle user choices
+**Core is Plugin**
 
 #### Plugin
 

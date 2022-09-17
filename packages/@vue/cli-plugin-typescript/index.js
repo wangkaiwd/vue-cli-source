@@ -1,5 +1,4 @@
 const path = require('path')
-
 module.exports = (api, projectOptions) => {
   const useThreads = process.env.NODE_ENV === 'production' && !!projectOptions.parallel
 
